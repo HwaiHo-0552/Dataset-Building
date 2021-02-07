@@ -5,8 +5,8 @@ from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
 import numpy as np
 
-classes = ['2', '3', '4a', '4b', '4c', '5']
-results = 'V:\\Coding\\Data_Analysis\\results.txt'
+classes = ['2', '3', '4', '5']
+results = 'V:\\Coding\\Thyroid_9long\\results\\Main\\confusion_matrix.txt'
 list_of_results = []
 list_of_GT = []
 list_of_Pre = []
@@ -49,7 +49,8 @@ def plot_confusion_matrix(cm, savename, title='Confusion Matrix'):
     plt.title(title)
     plt.colorbar()
     xlocations = np.array(range(len(classes)))
-    plt.xticks(xlocations, classes, rotation=90)
+    #plt.xticks(xlocations, classes, rotation=90)
+    plt.xticks(xlocations, classes)
     plt.yticks(xlocations, classes)
     plt.ylabel('Ground Truth')
     plt.xlabel('Predicted Label')
