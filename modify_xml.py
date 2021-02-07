@@ -1,12 +1,14 @@
 #! /usr/bin/python
 #-*- coding: UTF-8 -*-
+#---------苏州思翠所机器学习研发------------
 
+#统一xml内容格式
 import os
 import xml.etree.ElementTree as ET
 
-DICT = ''
-ATTRIB = ''
-CONT = ''
+DICT = 'C:\Coding\Test'
+ATTRIB = 'name'
+CONT = '4a'
 
 class Modify_xml:
     counter = 0;

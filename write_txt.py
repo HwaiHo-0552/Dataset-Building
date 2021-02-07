@@ -45,8 +45,7 @@ class Write:
     def read_and_write(self):
         read = open(self.file_txt, 'w+')
         for contents in self.list_of_content:
-            content = contents + '\n'
-            read.writelines(content)
+            read.writelines(contents)
             Write.counter += 1
         read.close()
 
