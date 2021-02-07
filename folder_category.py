@@ -8,7 +8,7 @@ import os
 import xml.etree.ElementTree as ET
 import shutil
 
-Path = 'V:\\Coding\\Thyroid_9long\\2ndTraining\\source_dataset\\1'
+Path = 'V:\Coding\9-long\data-mammogram\datasets_4\label'
 Type = 'xml'
 Attrib = 'name'
 
