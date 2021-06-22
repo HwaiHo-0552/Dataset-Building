@@ -85,6 +85,7 @@ class crop:
                 xmin=0      
                 
             img_1 = image[ymin:ymax, xmin:xmax]
+            new_img = cv2.resize(img_1, (224,224), interpolation=cv2.INTER_CUBIC) # 统一上采样至224*224
             cls_name = self.map[clas]
             for root, folders, files in os.walk(self.saved):
                 for f in folders:
@@ -92,12 +93,12 @@ class crop:
                         crop_pth = os.path.join(root, cls_name)
 
             count = str(counter)
-            img_name = img_name+'_'+count+'.jpg'
-            crop_img = os.path.join(crop_pth, img_name)                           # counter主要用于一张图像中不同位置的命名
-            cv2.imwrite(crop_img, img_1)              
+            new_name = img_name+'_'+count+'.jpg'
+            crop_img = os.path.join(crop_pth, new_name)                           # counter主要用于一张图像中不同位置的命名
+            cv2.imwrite(crop_img, new_img)              
             
             list_temp.clear()                                                     # 清空list_temp中的数据
-            counter = 0                                                           # counter清0
+        counter = 0                                                               # counter清0
 
 def main():
     work = crop(root_path, save_path, mapping)
